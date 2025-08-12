@@ -10,6 +10,145 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>Melodify</h1>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <main>
+            <div class="player-container">
+                <div class="now-playing">
+                    <div class="album-art">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Default album cover" id="cover-art">
+                        <div class="vinyl-overlay"></div>
+                    </div>
+                    <div class="song-info">
+                        <h2 id="song-title">No song selected</h2>
+                        <p id="song-artist">Select a song to play</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                            <div class="time-info">
+                                <span id="current-time">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                    <button id="play-btn"><i class="fas fa-play"></i></button>
+                    <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up" id="volume-icon"></i>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="library-container">
+                <div class="library-header">
+                    <h3>Your Library</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search songs...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-options">
+                        <select id="genre-filter">
+                            <option value="all">All Genres</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="classical">Classical</option>
+                            <option value="electronic">Electronic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="upload-section">
+                    <label for="file-upload" class="upload-btn">
+                        <i class="fas fa-upload"></i> Upload Music
+                        <input type="file" id="file-upload" accept="audio/*" multiple>
+                    </label>
+                </div>
+
+                <div class="playlist-tabs">
+                    <button class="tab-btn active" data-tab="all-songs">All Songs</button>
+                    <button class="tab-btn" data-tab="playlists">Playlists</button>
+                    <button class="tab-btn" id="new-playlist-btn"><i class="fas fa-plus"></i> New Playlist</button>
+                </div>
+
+                <div class="songs-list" id="all-songs">
+                    <!-- Songs will be populated here -->
+                    <div class="empty-state">
+                        <i class="fas fa-music"></i>
+                        <p>No songs available. Upload some music to get started!</p>
+                    </div>
+                </div>
+
+                <div class="playlists-container" id="playlists" style="display: none;">
+                    <!-- Playlists will be populated here -->
+                    <div class="empty-state">
+                        <i class="fas fa-list"></i>
+                        <p>No playlists created yet. Create one to organize your music!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-credits">
+                        <a href="https://www.codealpha.tech/" target="_blank"><h5>Challenge Task by CodeAlpha</h5></a>
+                        <a href="https://www.linkedin.com/in/ushindi-bihame-7a4a3a1b4/" target="_blank"><h5>Developed by Ushindi Bihame</h5></a>
+                    </div>
+                    <div class="footer-github">
+                        <h3>Check out my GitHub!!</h3>
+                        <div class="github-link">
+                            <i class="fas fa-hand-point-down"></i>
+                            <a href="https://github.com/ub-victor" target="_blank" class="github-btn">
+                                <i class="fab fa-github"></i> Visit GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright &copy; <span id="current-year"></span> Ushindi Bihame - All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for creating new playlist -->
+    <div class="modal" id="playlist-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Create New Playlist</h3>
+            <input type="text" id="playlist-name" placeholder="Enter playlist name">
+            <div class="song-selection">
+                <h4>Select Songs:</h4>
+                <div class="available-songs" id="modal-songs-list">
+                    <!-- Songs for playlist will be populated here -->
+                </div>
+            </div>
+            <button id="create-playlist-btn">Create Playlist</button>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
