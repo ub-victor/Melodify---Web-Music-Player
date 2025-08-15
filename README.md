@@ -1,6 +1,9 @@
 # Melodify - Web Music Player
 
-![Melodify Screenshot](https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)
+![Melodify Screenshot](images/white%20dashboard.png)
+![Melodify Screenshot](images/black.png)
+
+
 
 Melodify is a modern, responsive web-based music player with playlist support, built with HTML, CSS, and JavaScript. It allows users to upload and play music files, create and manage playlists, and control playback with an intuitive interface.
 
