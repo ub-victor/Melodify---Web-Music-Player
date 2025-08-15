@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     duration: '5:24',
                     genre: 'jazz',
                     audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-                    coverArt: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Take_Five_%28Dave_Brubeck_album_-_cover_art%29.jpg/220px-Take_Five_%28Dave_Brubeck_album_-_cover_art%29.jpg'
+                    coverArt: 'https://coverartarchive.org/release/80feb9da-212c-4767-a160-998a17583f09/7069907142-500.jpg'
                 }
             ];
             saveSongs();
