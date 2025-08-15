@@ -715,7 +715,7 @@ footer {
     gap: 10px;
 }
 
-.github-link i.fa-hand-point-down {
+.github-link i.fa-hand-point-right {
     color: var(--primary-color);
     animation: bounce 2s infinite;
 }
